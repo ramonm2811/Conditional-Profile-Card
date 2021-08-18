@@ -25,6 +25,21 @@ import "../style/index.scss";
 function render(variables = {}) {
   console.log("These are the current variables: ", variables); //print on the console
   // here we ask the logical questions to make decisions on how to build the html
+  const name = variables.name == null ? "Lucy" : variables.name;
+  const lastName = variables.lastname == null ? "Boilett" : variables.lastname;
+  const nomCompleto = name + " " + lastName;
+  const country = variables.country == null ? "USA" : variables.country;
+  const position =
+    variables.socialMediaPosition == "position-left"
+      ? "position-left"
+      : variables.socialMediaPosition;
+  const role = variables.role == null ? "Web Developer" : variables.role;
+  const city = variables.city == null ? "Miami" : variables.city;
+  const twitter = variables.twitter == null ? " " : variables.twitter;
+  const github = variables.github == null ? " " : variables.github;
+  const linkedin = variables.linkedin == null ? " " : variables.linkedin;
+  const instagram = variables.instagram == null ? " " : variables.instagram;
+
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
@@ -33,14 +48,14 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/alesanchezr"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://github.com/alesanchezr"><i class="fa fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/alesanchezr"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/alesanchezr"><i class="fa fa-instagram"></i></a></li>
+          <h1>${nomCompleto}</h1>
+          <h2>${role}</h2>
+          <h3>${city}, ${country}</h3>
+          <ul class= ${position}>
+            <li><a href="${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="${github}"><i class="fa fa-github"></i></a></li>
+            <li><a href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
