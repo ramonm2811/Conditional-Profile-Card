@@ -35,10 +35,12 @@ function render(variables = {}) {
       : variables.socialMediaPosition;
   const role = variables.role == null ? "Web Developer" : variables.role;
   const city = variables.city == null ? "Miami" : variables.city;
-  const twitter = variables.twitter == null ? " " : variables.twitter;
-  const github = variables.github == null ? " " : variables.github;
-  const linkedin = variables.linkedin == null ? " " : variables.linkedin;
-  const instagram = variables.instagram == null ? " " : variables.instagram;
+  const twitter = variables.twitter == null ? "alesanchezr" : variables.twitter;
+  const github = variables.github == null ? "alesanchezr" : variables.github;
+  const linkedin =
+    variables.linkedin == null ? "alesanchezr" : variables.linkedin;
+  const instagram =
+    variables.instagram == null ? "alesanchezr" : variables.instagram;
 
   // if includeCover==false then we reset the cover code without the <img> tag to make the cover transparent.
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
@@ -52,10 +54,10 @@ function render(variables = {}) {
           <h2>${role}</h2>
           <h3>${city}, ${country}</h3>
           <ul class= ${position}>
-            <li><a href="${twitter}"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="${github}"><i class="fa fa-github"></i></a></li>
-            <li><a href="${linkedin}"><i class="fa fa-linkedin"></i></a></li>
-            <li><a href="${instagram}"><i class="fa fa-instagram"></i></a></li>
+            <li><a target="_blank" href="https://twitter.com/${twitter}"><i class="fa fa-twitter"></i></a></li>
+            <li><a target="_blank" href="https://github.com/${github}"><i class="fa fa-github"></i></a></li>
+            <li><a target="_blank" href="https://linkedin.com/${linkedin}"><i class="fa fa-linkedin"></i></a></li>
+            <li><a target="_blank" href="https://instagram.com/${instagram}"><i class="fa fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
